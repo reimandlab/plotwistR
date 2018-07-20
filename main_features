@@ -1,0 +1,20 @@
+- palette (Helen) 
+- font & size (make the default size larger/more readable)
+- way to easily add *
+- theme_bw()
+- angle of a-axis labels make default 45 degrees 
+- automatically make title centred and multiple lines if longer 
+- breakpoints on y-axis 
+- option to add p-values 
+- easy way to change legend title and axis labels 
+
+- contunious color scales make default colors 
+- automatically round numbers 
+- easy way to add correlation (pearson/spearman) to scatter plots 
+- easy way to color/fill anything in our plots 
+- easy way to add covariates 
+- level re-ordering 
+
+
+
+
