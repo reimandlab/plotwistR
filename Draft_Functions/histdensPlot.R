@@ -24,7 +24,7 @@ autohist<- function(data, mapping, density=FALSE, mean=FALSE){
       if(is.null(mapping$colour)) mapping$colour <- mapping$fill
       mu <- stats::aggregate(data[,toString(mapping$x)], by=list(grp=data[,toString(mapping$colour)]), mean)
       names(mu) <- c("group", "mean")
-      p <- p+geom_vline(data=mu, aes(xintercept=mean, color=group), linetype="dashed")+
+      p <- p+geom_vline(data=mu, aes(xintercept=mean, color=group), linetype="dashed", show.legend=FALSE)+
         theme_classic()
     }
   }
@@ -49,7 +49,7 @@ autodensity <- function(data, mapping, jitter=FALSE, mean=FALSE){
       if(is.null(mapping$colour)) mapping$colour <- mapping$fill
       mu <- stats::aggregate(data[,toString(mapping$x)], by=list(grp=data[,toString(mapping$colour)]), mean)
       names(mu) <- c("group", "mean")
-      p <- p+geom_vline(data=mu, aes(xintercept=mean, color=group), linetype="dashed")
+      p <- p+geom_vline(data=mu, aes(xintercept=mean, color=group), linetype="dashed", show.legned=FALSE)
     }
   }
   p
@@ -66,6 +66,8 @@ data <- mtcars
 autohist(df, aes(weight, fill=sex, color=sex), F, T)
 autodensity(df, aes(weight, fill=sex, color=sex), T, T)
 autodensity(df, aes(weight, color=sex), F, T)
+
+autohist(iris, aes(Sepal.Length, fill=Species), T, T)
 
 
 
